@@ -1,45 +1,108 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+<head>
+    <title>DWA15 - Project 3</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/js/formsubmit.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <a class="navbar-brand" href="#">DWA 15</a>
+      <ul class="nav nav-pills">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://p1.oprisan.com">P1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://p2.oprisan.com">P2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://p3.oprisan.com">P3 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://p4.oprisan.com">P4</a>
+        </li>
+      </ul>
+    </nav>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Text and User Profile Generator</h1>
+        <p>This Laravel application allows you to generate random text paragraphs and user profile data that can be used anywhere!</p>
+        <form>
+          <div class="form-group row">
+            <label for="wordCount" class="col-sm-4 form-control-label">How many words would you like to include?</label>
+            <div class="col-sm-2">          
+              <select id="wordCount" name="wordCount" class="form-control">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
             </div>
+          </div>
+          <div class="form-group row">
+            <label for="numbersCount" class="col-sm-4 form-control-label">How many numbers should be included?</label>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="numbersCount" name="numbersCount" placeholder="0">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="specialCharactersCount" class="col-sm-4 form-control-label">How many special characters should be included?</label>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="specialCharactersCount" name="specialCharactersCount" placeholder="0">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="includeHyphens" class="col-sm-4 form-control-label">Include hyphens</label>
+            <div class="col-sm-2">
+                <input type="checkbox" name="includeHyphens" id="includeHyphens" value="1">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4">Case</label>
+            <div class="col-sm-4">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="caseSelection" id="caseSelection1" value="lower" checked>
+                  lowercase
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="caseSelection" id="caseSelection2" value="upper">
+                  upper case
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <input type="button" class="btn btn-primary btn-lg" id="generatePassword" value="Generate Password">
+            </div>
+            <div class="col-sm-8">
+                <span id="generatedPassword" class="alert alert-success" role="alert"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="container">
+        <div class="pw-head">
+            <a href="http://xkcd.com/936/">
+                <img src="http://imgs.xkcd.com/comics/password_strength.png" alt="xkcd password generator info">
+            </a>
+            <p>Live URL: <a href="http://p1.oprisan.com">http://p2.oprisan.com</a></p>
+            <p>GitHub URL: <a href="https://github.com/andreioprisan/dwa15-p1">https://github.com/
+            andreioprisan/dwa15-p2</a></p>
         </div>
-    </body>
+        </div>
+    </div>
+</body>
 </html>

@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://p3.oprisan.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -193,6 +193,8 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'LoremIpsum' =>         Vendor\Badcow\LoremIpsum\Generator::class,
+//        'Faker'  => Vendor\Fzaninotto\Faker\Factory::class
 
     ],
 

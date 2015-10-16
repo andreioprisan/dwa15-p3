@@ -1,6 +1,10 @@
 <?php
 namespace App\Http\Controllers;
-use Faker\Factory;
+
+// Used for text generation
+use Badcow\LoremIpsum\Generator as LoremIpsum;
+// User for profile generation
+use Faker\Factory as Faker;
 
 class GenerateController extends Controller
 {
@@ -9,28 +13,34 @@ class GenerateController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function index($paragraphs = 1)
+	public function index()
 	{
-		if (!is_integer($paragraphs)) {
-			$paragraphs = 1;
-		}
-
-		$results = $this->generateParagraphs($paragraphs);
-
-		return response()->json($results);
+		// Show valid endpoints and parameters
+		return response()->json("Please use either /generate/paragraphs/{count} or /generate/profile/{count}/{profile}/{birthdate}/{address} functions.");
 	}
 
-	public function generateParagraphs($count) 
+	/**
+	 * Generate a number of text paragraphs and return via JSON
+	 *
+	 * @return Response in JSON
+	 */
+	public function text($paragraphs = 1) 
 	{
-		$generator = App::make('LoremIpsumGenerator');
+		$generator = new LoremIpsum;
+		// Generate desired number of text paragraphs
 		$paragraphs = $generator->getParagraphs($paragraphs);		
-		$results = implode('<p>', $paragraphs);
-		return $results;
+		return response()->json(array('text' => $paragraphs));
 	}
 
+	/**
+	 * Generate a number of test profiles and return via JSON
+	 *
+	 * @return Response in JSON
+	 */
 	public function profile($count = 1, $profile = 1, $birthdate = 1, $address = 1)
 	{
-		$generator = Faker\Factory::create();
+		$generator = Faker::create();
+		// Create a results array based on required fake data to create
 		$results = array();
 		for($i = 1; $i<= $count; $i++) {
 			array_push(
@@ -39,7 +49,7 @@ class GenerateController extends Controller
 					'name' => $generator->name,
 					'profile' => $profile ? $generator->text(200) : null,
 					'birthdate' => $birthdate ? $generator->dateTimeThisCentury->format('m/d/y') : null ,
-					'address' => $address ? $generator->address : null
+					'address' => $address ? nl2br($generator->address) : null
 				)
 			);
 		}

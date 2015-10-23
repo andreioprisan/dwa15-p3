@@ -24,6 +24,12 @@ The demo site can be seen at [http://p3.oprisan.com](http://p3.oprisan.com)
 
 A narrated demo of this application can be seen at [http://oprisan.com/dwa15/p3.m4v](http://oprisan.com/dwa15/p3.m4v)
 
+## Plugins
+
+The following plugins are used in the Laravel application:
+* badcow/lorem-ipsum(https://packagist.org/packages/badcow/lorem-ipsum)
+* fzaninotto/faker(https://packagist.org/packages/fzaninotto/faker)
+
 ### License
 
 This program is open-sourced under the [MIT license](http://opensource.org/licenses/MIT)

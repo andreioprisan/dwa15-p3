@@ -72,9 +72,9 @@ class GenerateController extends Controller
 
 	public function textbuild()
 	{
-		$count = Input::get('count');
+		$count = (int)Input::get('count');
 		// Check if we get integer input or default to 2
-		if (!is_integer($count)) {
+		if (!is_numeric($count)) {
 			$count = 2;
 		}
 
@@ -84,14 +84,29 @@ class GenerateController extends Controller
 
 	public function profilebuild()
 	{
-		$count = Input::get('count');
-		$profile = Input::get('profile');
-		$birthdate = Input::get('birthdate');
-		$address = Input::get('address');
-
-		// Check if we get integer input or default to 2
-		if (!is_integer($count)) {
+		// Check if we get integer input or default to 2, or 0 for other settings
+		$count = (int)Input::get('count');
+		if (!is_numeric($count)) {
 			$count = 2;
+		}
+
+		$profile = Input::get('profile');
+		if ($profile == "on") {
+			$profile = 1;
+		} else {
+			$profile = 0;
+		}
+		$birthdate = Input::get('birthdate');
+		if ($birthdate == "on") {
+			$birthdate = 1;
+		} else {
+			$birthdate = 0;
+		}
+		$address = Input::get('address');
+		if ($address == "on") {
+			$address = 1;
+		} else {
+			$address = 0;
 		}
 
 		$results = $this->profile($count, $profile, $birthdate, $address, false);

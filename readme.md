@@ -1,27 +1,28 @@
-## Laravel PHP Framework
+## DWA15 - P3
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+The purpose of this program is to provide a application that can generate both random text paragraphs and random user profile data. As a bonus, REST endpoints for these functions exist as well.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## REST endpoints
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+###/generate/paragraphs/{count}
 
-## Official Documentation
+Returns a JSON array of the number of paragraphs expected. The count parameter is expected to be an integer.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+###/generate/profile/{count}/{profile}/{birthdate}/{address}
 
-## Contributing
+Returns a JSON array of the user profiles.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Optional parameters for 
+1. profile: random profile description text, up to 200 characters
+2. birthdate: mm/dd/yy format date
+3. address: US postal address, <br> delimited
 
-## Security Vulnerabilities
+## Demo
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+The demo site can be seen at [http://p3.oprisan.com](http://p3.oprisan.com)
+
+A narrated demo of this application can be seen at [http://oprisan.com/dwa15/p3.m4v](http://oprisan.com/dwa15/p3.m4v)
 
 ### License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+This program is open-sourced under the [MIT license](http://opensource.org/licenses/MIT)

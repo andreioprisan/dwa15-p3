@@ -13,8 +13,11 @@ Returns a JSON array of the number of paragraphs expected. The count parameter i
 Returns a JSON array of the user profiles.
 
 Optional parameters for 
+
 1. profile: random profile description text, up to 200 characters
+
 2. birthdate: mm/dd/yy format date
+
 3. address: US postal address, <br> delimited
 
 ## Demo

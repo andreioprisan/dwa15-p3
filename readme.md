@@ -14,11 +14,9 @@ Returns a JSON array of the user profiles.
 
 Optional parameters for 
 
-1. profile: random profile description text, up to 200 characters
-
-2. birthdate: mm/dd/yy format date
-
-3. address: US postal address, <br> delimited
+* profile: random profile description text, up to 200 characters
+* birthdate: mm/dd/yy format date
+* address: US postal address, <br> delimited
 
 ## Demo
 

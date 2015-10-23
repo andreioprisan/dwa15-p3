@@ -31,11 +31,11 @@
       <div class="container">
         <h1>Text and User Profile Generator</h1>
         <p>This Laravel application allows you to generate random text paragraphs and user profile data that can be used anywhere!</p>
-        <form>
+        <form method="get" action="generate/textbuild">
           <div class="form-group row">
-            <label for="wordCount" class="col-sm-4 form-control-label">How many words would you like to include?</label>
+            <label for="count" class="col-sm-4 form-control-label">How many paragraphs would you like to generate?</label>
             <div class="col-sm-2">          
-              <select id="wordCount" name="wordCount" class="form-control">
+              <select id="count" name="count" class="form-control">
                 <option value="1">1</option>
                 <option value="2" selected>2</option>
                 <option value="3">3</option>
@@ -44,65 +44,65 @@
                 <option value="6">6</option>
                 <option value="7">7</option>
                 <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
               </select>
             </div>
           </div>
           <div class="form-group row">
-            <label for="numbersCount" class="col-sm-4 form-control-label">How many numbers should be included?</label>
-            <div class="col-sm-2">
-              <input type="text" class="form-control" id="numbersCount" name="numbersCount" placeholder="0">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="specialCharactersCount" class="col-sm-4 form-control-label">How many special characters should be included?</label>
-            <div class="col-sm-2">
-              <input type="text" class="form-control" id="specialCharactersCount" name="specialCharactersCount" placeholder="0">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="includeHyphens" class="col-sm-4 form-control-label">Include hyphens</label>
-            <div class="col-sm-2">
-                <input type="checkbox" name="includeHyphens" id="includeHyphens" value="1">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-4">Case</label>
             <div class="col-sm-4">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="caseSelection" id="caseSelection1" value="lower" checked>
-                  lowercase
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="caseSelection" id="caseSelection2" value="upper">
-                  upper case
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-4">
-              <input type="button" class="btn btn-primary btn-lg" id="generatePassword" value="Generate Password">
-            </div>
-            <div class="col-sm-8">
-                <span id="generatedPassword" class="alert alert-success" role="alert"></span>
+              <input type="submit" class="btn btn-primary btn-lg" id="generateText" value="Generate Paragraphs">
             </div>
           </div>
         </form>
+        <br><br>
+        <form method="get" action="generate/profilebuild">
+          <div class="form-group row">
+            <label for="count" class="col-sm-4 form-control-label">How many user profiles would you like to generate?</label>
+            <div class="col-sm-2">          
+              <select id="count" name="count" class="form-control">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            Include
+            <label for="count" class="col-sm-4 form-control-label">Birthday</label>
+            <div class="col-sm-2">          
+                <input name="birthdate" type="checkbox">
+            </div>
+          </div>
+          <div class="form-group row">
+            Include
+            <label for="count" class="col-sm-4 form-control-label">Address</label>
+            <div class="col-sm-2">          
+                <input name="address" type="checkbox">
+            </div>
+          </div>
+          <div class="form-group row">
+            Include
+            <label for="count" class="col-sm-4 form-control-label">Profile</label>
+            <div class="col-sm-2">          
+                <input name="profile" type="checkbox">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <input type="submit" class="btn btn-primary btn-lg" id="generateProfiles" value="Generate Profiles">
+            </div>
+          </div>
+        </form>
+
       </div>
-    </div>
-    <div class="container">
-        <div class="pw-head">
-            <a href="http://xkcd.com/936/">
-                <img src="http://imgs.xkcd.com/comics/password_strength.png" alt="xkcd password generator info">
-            </a>
-            <p>Live URL: <a href="http://p1.oprisan.com">http://p2.oprisan.com</a></p>
-            <p>GitHub URL: <a href="https://github.com/andreioprisan/dwa15-p1">https://github.com/
-            andreioprisan/dwa15-p2</a></p>
-        </div>
-        </div>
     </div>
 </body>
 </html>

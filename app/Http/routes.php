@@ -17,8 +17,12 @@ Route::get('/', function () {
 
 // Default generator endpoint
 Route::get('/generate', 'GenerateController@index');
+// View for paragraph generation
+Route::get('/generate/textbuild', 'GenerateController@textbuild');
 // Generate a number of paragraphs based on the count parameter
 Route::get('/generate/paragraphs/{count}', 'GenerateController@text');
+// View for profile generation
+Route::get('/generate/profilebuild', 'GenerateController@profilebuild');
 // Generate a number of fake profiles based on 
 Route::get('/generate/profile/{count}/{profile}/{birthdate}/{address}', 'GenerateController@profile');
 
